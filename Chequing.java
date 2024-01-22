@@ -7,9 +7,10 @@ class Chequings extends Account implements Serializable {
 
     }
 
-    Chequings(String owner, int balance, double interestRate) {
+    Chequings(String owner, String name, int balance, double interestRate) {
         super();
         this.setOwner(owner);
+        this.setName(name);
         this.setBalance(balance);
         this.setInterestRate(interestRate);
 
