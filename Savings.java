@@ -10,8 +10,9 @@ class Savings extends Account implements Serializable {
 
     }
 
-    Savings(String owner, double balance, double interestRate, int transferLimit, int transferCount, boolean compounding) {
+    Savings(String owner, String name, double balance, double interestRate, int transferLimit, int transferCount, boolean compounding) {
         this.setOwner(owner);
+        this.setName(name);
         this.setBalance(balance);
         this.setInterestRate(interestRate);
         this.transferLimit = transferLimit;
