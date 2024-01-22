@@ -59,7 +59,7 @@ class FileIO {
             fileReader.close();
         }
         catch (FileNotFoundException e){
-            System.out.println("File not found");
+            System.out.println("Username or Password File not found");
         }
         catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -133,7 +133,7 @@ class FileIO {
             i.printStackTrace();
             return;
         } catch (ClassNotFoundException c) {
-            System.out.println("Employee class not found");
+            System.out.println("Savings class not found");
             c.printStackTrace();
             return;
         }
