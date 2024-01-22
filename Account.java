@@ -4,9 +4,11 @@ class Account implements Serializable {
     private String owner;
     private double balance;
     private double interestRate;
+    private String name;
 
     public Account() {
         this.owner = "";
+        this.name = "";
         this.balance = 0;
         this.interestRate = 0;
     }
@@ -35,4 +37,11 @@ class Account implements Serializable {
         this.owner = owner;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
