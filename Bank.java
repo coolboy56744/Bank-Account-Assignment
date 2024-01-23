@@ -140,11 +140,12 @@ public class Bank {
                     for (int i = 1; i <= applicableChequings.size(); i++) {
                         System.out.println(i + ". " + applicableChequings.get(i - 1).getName());
                     }
-                    int selection = input.nextInt();
+                    int selection = 0;
+                    selection = intValidation(selection);
                     while (true) {
                         if (selection > applicableChequings.size() || selection < 0) {
                             System.out.println("Out of bounds");
-                            selection = input.nextInt();
+                            selection = intValidation(selection);
                         } else {
                             break;
                         }
@@ -202,13 +203,26 @@ public class Bank {
                                     }
 
                                     int accountSelection = 0;
+                                    boolean escape = false;
                                     while (true) {
-                                        accountSelection = intValidation(accountSelection);
-                                        if (accountSelection <= 0 || accountSelection > FileIO.getUsernames().size()) {
-                                            System.out.println("Out of bounds");
-                                        } else if (FileIO.getUsernames().get(accountSelection).equals(name)) {
-                                            System.out.println("You can't transfer to yourself");
-                                        } else {
+                                        while (true) {
+                                            accountSelection = intValidation(accountSelection);
+                                            if (accountSelection <= 0 || accountSelection > FileIO.getUsernames().size()) {
+                                                System.out.println("Out of bounds");
+                                            } else {
+                                                break;
+                                            }
+                                        }
+                                        while (true) {
+                                            if (FileIO.getUsernames().get(accountSelection).equals(name)) {
+                                                System.out.println("You can't transfer to yourself");
+                                                break;
+                                            } else {
+                                                escape = true;
+                                                break;
+                                            }
+                                        }
+                                        if (escape) {
                                             break;
                                         }
                                     }
@@ -281,11 +295,12 @@ public class Bank {
                     for (int i = 1; i <= applicableSavings.size(); i++) {
                         System.out.println(i + ". " + applicableSavings.get(i - 1).getName());
                     }
-                    int selection = input.nextInt();
+                    int selection = 0;
+                    selection = intValidation(selection);
                     while (true) {
                         if (selection > applicableSavings.size() || selection < 0) {
                             System.out.println("Out of bounds");
-                            selection = input.nextInt();
+                            selection = intValidation(selection);
                         } else {
                             break;
                         }
@@ -376,11 +391,12 @@ public class Bank {
                     for (int i = 1; i <= applicableChequings.size(); i++) {
                         System.out.println(i + ". " + applicableChequings.get(i - 1).getName());
                     }
-                    int selection = input.nextInt();
+                    int selection = 0;
+                    selection = intValidation(selection);
                     while (true) {
                         if (selection > applicableChequings.size() || selection < 0) {
                             System.out.println("Out of bounds");
-                            selection = input.nextInt();
+                            selection = intValidation(selection);
                         } else {
                             break;
                         }
@@ -402,11 +418,12 @@ public class Bank {
                     for (int i = 1; i <= applicableSavings.size(); i++) {
                         System.out.println(i + ". " + applicableSavings.get(i - 1).getName());
                     }
-                    int selection = input.nextInt();
+                    int selection = 0;
+                    selection = intValidation(selection);
                     while (true) {
                         if (selection > applicableSavings.size() || selection < 0) {
                             System.out.println("Out of bounds");
-                            selection = input.nextInt();
+                            selection = intValidation(selection);
                         } else {
                             break;
                         }
