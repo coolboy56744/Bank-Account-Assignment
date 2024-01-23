@@ -1,6 +1,7 @@
 import java.io.Serializable;
 
 class Savings extends Account implements Serializable {
+    private static final long serialVersionUID = 2950027667689079028L;
     private int transferLimit;
     private int transferCount;
     private boolean compounding;
