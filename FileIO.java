@@ -139,4 +139,24 @@ class FileIO {
         }
     }
 
+    public static void cAccountDeserialization() {
+        Savings temp = null;
+        try {
+            FileInputStream fileIn = new FileInputStream("ChequingAccounts.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+
+            ChequingsAccount = (List<Chequings>) in.readObject();
+
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+            return;
+        } catch (ClassNotFoundException c) {
+            System.out.println("Chequings class not found");
+            c.printStackTrace();
+            return;
+        }
+    }
+
 }
