@@ -21,14 +21,6 @@ class FileIO {
         return passwords;
     }
 
-    public static void addSavings(Savings account) {
-        savingsAccount.add(account);
-    }
-
-    public static void addChequings(Chequings account) {
-        ChequingsAccount.add(account);
-    }
-
     public static List<Savings> getSavingsAccount() {
         return savingsAccount;
     }
@@ -102,7 +94,6 @@ class FileIO {
             FileOutputStream fileOut = new FileOutputStream("ChequingsAccounts.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(ChequingsAccount);
-            System.out.println("Serialized data is saved in employee.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
@@ -113,7 +104,6 @@ class FileIO {
             FileOutputStream fileOut = new FileOutputStream("SavingAccounts.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(savingsAccount);
-            System.out.println("Serialized data is saved in employee.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
@@ -142,7 +132,7 @@ class FileIO {
     public static void cAccountDeserialization() {
         Savings temp = null;
         try {
-            FileInputStream fileIn = new FileInputStream("ChequingAccounts.ser");
+            FileInputStream fileIn = new FileInputStream("ChequingsAccounts.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
             ChequingsAccount = (List<Chequings>) in.readObject();
